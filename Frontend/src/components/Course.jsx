@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Cards from "./Cards";
-import CourseCard from "./CourseCard";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import CourseCard from "./CourseCard";
 
 function Course() {
   const [book, setBook] = useState([]);
 
-  // Hardcoded courses data
   const courses = [
     { id: 1, title: "React for Beginners", description: "Learn the basics of React in this comprehensive course.", price: 49.99 },
     { id: 2, title: "Advanced React", description: "Take your React skills to the next level with advanced concepts.", price: 79.99 },
@@ -37,35 +35,31 @@ function Course() {
 
   return (
     <>
-      <div className="container">
-        <div className="heading">
-          <h1>We're delighted to have you <span> Here! :)</span></h1>
-          <p className="description">
-            
-          </p>
-          {/* <Link to="/">
-            <button className="button">Back</button>
-          </Link> */}
+      <div className="container mx-auto py-20 px-6 md:px-12">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold">We're delighted to have you <span>Here! :)</span></h1>
         </div>
-        <div className="grid-container">
+        
+        <div className="grid gap-8 mb-16 grid-cols-1 md:grid-cols-2">
           {book.map((item) => (
-            <Cards key={item.id} item={item} />
+            <CourseCard key={item.id} course={item} />
           ))}
         </div>
-        <div className="course-section">
-          <h1 className="course-heading">Our Courses</h1>
-          <div className="grid-container">
+        
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold mb-8 text-center">Our Courses</h2>
+          <div className="grid gap-8 grid-cols-1 md:grid-cols-2">
             {courses.map((course) => (
               <CourseCard key={course.id} course={course} />
             ))}
           </div>
         </div>
-        <div className="heading">
-        <Link to="/">
-            <button className="button">Back</button>
+        
+        <div className="text-center">
+          <Link to="/">
+            <button className="bg-pink-600 text-white px-6 py-2 rounded-full hover:bg-pink-700 transition-colors">Back</button>
           </Link>
         </div>
-        
       </div>
     </>
   );

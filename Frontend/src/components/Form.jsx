@@ -25,7 +25,7 @@ function Form() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-slate-800">
+    <div className="flex items-center justify-center min-h-screen bg-slate-800 mt-32 mb-20">
       <div className="max-w-screen-md w-full bg-white shadow-lg rounded-lg p-8">
         <h1 className="text-3xl font-bold mb-6 text-center">Get In Touch</h1>
         <form onSubmit={handleSubmit}>
@@ -118,7 +118,7 @@ function Form() {
           </div>
           <button
             type="submit"
-            className="px-3 py-2 bg-red-500 text-white rounded-md cursor-pointer"
+            className="px-3 py-2 bg-blue-500 text-white rounded-md cursor-pointer mt-6"
           >
             Submit
           </button>
